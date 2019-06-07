@@ -1,18 +1,18 @@
 ﻿using System;
 using System.IO;
-using HeartDiseasePredictionConsoleApp.DataStructures;
+using HeartDiseaseModel.DataStructures;
 using Microsoft.ML;
 using static Microsoft.ML.DataOperationsCatalog;
 
-namespace HeartDiseasePredictionConsoleApp
+namespace HeartDiseaseModel
 {
     public class Program
     {
-        private static string BaseDatasetsRelativePath = @"../data";
+        private static string BaseDatasetsRelativePath = @"data";
         private static string TrainDataPath = $"{BaseDatasetsRelativePath}/training.csv";
         private static string TestDataPath = $"{BaseDatasetsRelativePath}/test.csv";
 
-        private static string BaseModelsRelativePath = @"../models";
+        private static string BaseModelsRelativePath = @"models";
         private static string ModelPath = $"{BaseModelsRelativePath}/HeartClassification.zip";
         
         public static void Main(string[] args)
@@ -23,7 +23,6 @@ namespace HeartDiseasePredictionConsoleApp
             TestPrediction(mlContext);
 
             Console.WriteLine("=============== End of process, hit any key to finish ===============");
-            Console.ReadKey();
         }
 
         private static void BuildTrainEvaluateAndSaveModel(MLContext mlContext)
