@@ -1,0 +1,15 @@
+{
+    "Age" : 95.0,
+    "Sex": 1.0,
+    "Cp": 4.0,
+    "TrestBps" : 145.0,
+    "Chol": 210.0,
+    "Fbs": 0.0,
+    "RestEcg": 2.0,
+    "Thalac": 148.0,
+    "Exang": 1.0,
+    "OldPeak": 1.9,
+    "Slope": 2.0,
+    "Ca": 1.0,
+    "Thal": 7.0
+}
