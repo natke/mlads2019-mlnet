@@ -4,6 +4,10 @@
 
 git checkout part2-skeleton
 
+## Copy the model from part1
+
+cp part1/HeartDiseaseModel/models/HeartClassification.zip part2/HeartDiseaseFunctionApp/models/HeartClassification.zip
+
 ## Open the project in Visual Studio
 
 ### Add prediction engine pool
