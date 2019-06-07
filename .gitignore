@@ -350,4 +350,4 @@ MigrationBackup/
 
 # Mac DS_store files
 .DS_Store
-
+.vscode
