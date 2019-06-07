@@ -30,12 +30,20 @@ namespace HeartDiseaseFunctionApp
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             //Parse HTTP Request Body
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            HeartData data = JsonConvert.DeserializeObject<HeartData>(requestBody);
+
+            log.LogInformation("Heart Data: {0}", data);
+
 
             //Make Prediction
+            HeartPrediction prediction = _predictionEnginePool.Predict(data);
 
             //Convert prediction to string
+            string disease = Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative";
 
             //Return Prediction
+            return (ActionResult)new OkObjectResult(disease);
         }
     }
 }

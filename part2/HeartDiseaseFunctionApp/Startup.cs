@@ -10,7 +10,8 @@ namespace HeartDiseaseFunctionApp
     {
         public void Configure(IWebJobsBuilder builder)
         {
-            // Inject prediction engine pool as a dependency
+            builder.Services.AddPredictionEnginePool<HeartData, HeartPrediction>()
+                .FromFile("models/HeartClassification.zip");
         }
     }
 }
